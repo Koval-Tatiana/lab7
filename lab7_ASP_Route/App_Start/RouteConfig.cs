@@ -14,11 +14,11 @@ namespace lab7_ASP_Route
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //Задание 1: домашний маршрут
-            //routes.MapRoute(
-            //    name: "localhost",
-            //    url: "",
-            //    defaults: new { controller = "Home", action = "Index"}
-            //);
+            routes.MapRoute(
+                name: "localhost",
+                url: "",
+                defaults: new { controller = "Home", action = "Products" }
+            );
 
             //Задание 2: маршрут \product\xxx
             routes.MapRoute(

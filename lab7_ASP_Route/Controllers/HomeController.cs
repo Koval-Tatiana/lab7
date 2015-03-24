@@ -26,5 +26,10 @@ namespace lab7_ASP_Route.Controllers
 
             return View();
         }
+
+        public ActionResult Products()
+        {
+            return View();
+        }
     }
 }
