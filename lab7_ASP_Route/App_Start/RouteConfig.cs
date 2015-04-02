@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using lab7_ASP_Route.App_Start;
 
 namespace lab7_ASP_Route
 {
@@ -41,10 +42,11 @@ namespace lab7_ASP_Route
             routes.MapRoute(
               name: "product4",
               url: "products/date/{validDate}/{page}",
-              defaults: new { controller = "Product", action = "Date", validDate = "01.01.2015", page = "1" },
+              defaults: new { controller = "Product", action = "Date", validDate = "01-01-2015", page = "1" },
                  constraints: new
                  {
-                     validDate = @"(0[1-9]|[12][0-9]|3[01])[- .](0[1-9]|1[012])[- .](19|20)\d\d",
+                     //validDate = @"(0[1-9]|[12][0-9]|3[01])[- .](0[1-9]|1[012])[- .](19|20)\d\d",
+                     validDate = new validDateConstraint(),
                      page = @"\d+"
                  }
               );
